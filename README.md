@@ -61,28 +61,21 @@ Tests describe what a shopper does. Page objects know how to click and assert on
 - Checkout information, item total, tax, grand total, and the order confirmation
 - Checkout blocked when the first name is missing
 
-## Push this project to GitHub
+## GitHub
 
-Run these commands from this folder. `git init` here gives the automation project its own repository.
+The project is published at [19PA1A0416/Playwright-Automation-Project](https://github.com/19PA1A0416/Playwright-Automation-Project).
+
+After you change tests, commit from this folder and push:
 
 ```bash
-git init
 git add .
-git status
-git commit -m "Add Playwright end-to-end shopper tests"
+git commit -m "Describe what you changed"
+git push
 ```
 
-Check `git status` before the commit. You should see the tests, page objects, `package.json`, and `package-lock.json`. You should not see `node_modules/`, `test-results/`, or `playwright-report/`. Those folders are listed in `.gitignore`.
+`git status` should not list `node_modules/`, `test-results/`, or `playwright-report/`. Those folders are listed in `.gitignore`.
 
-Create an empty repository on GitHub, then connect it and push. Replace the URL with the one GitHub shows you:
-
-```bash
-git branch -M main
-git remote add origin https://github.com/YOUR_USER/YOUR_REPO.git
-git push -u origin main
-```
-
-After the push, GitHub Actions runs the same `npm test` command. The workflow file is `.github/workflows/playwright.yml`. A green check on the commit means the end-to-end tests passed on GitHub's machines.
+GitHub Actions runs `npm test` on each push. The workflow file is `.github/workflows/playwright.yml`.
 
 ## Debug a failure
 
